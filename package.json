@@ -1,0 +1,21 @@
+{
+  "name": "elpriser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.mjs",
+  "scripts": {
+    "test": "http-server -o"
+  },
+  "author": "Jakob Kruse <kruse@kruse-net.dk>",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.10.1",
+    "chart.js": "^3.9.1",
+    "date-fns": "^2.29.3",
+    "node-fetch": "^3.2.10",
+    "telegraf": "^4.9.1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
