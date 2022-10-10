@@ -11,6 +11,9 @@ async function sendUpdate() {
     const date = new Date(Date.now() + 1000*60*60*24);
     const tomorrow = date.toISOString().substring(0, 10);
     const data = await getData(tomorrow, process.env.AREA);
+    if (!data) {
+        return false;
+    }
     const canvas = createCanvas(800, 500);
     drawChart(canvas, tomorrow, process.env.AREA, data);
     const stream = canvas.createPNGStream();
