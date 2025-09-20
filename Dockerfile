@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:22-alpine
 RUN apk add --no-cache ttf-liberation tzdata pixman-dev cairo-dev pango-dev
 WORKDIR /app
 COPY package*.json .

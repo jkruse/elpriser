@@ -1,6 +1,6 @@
 {
   "name": "elpriser",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "",
   "main": "src/main.mjs",
   "scripts": {
@@ -9,11 +9,11 @@
   "author": "Jakob Kruse <kruse@kruse-net.dk>",
   "license": "ISC",
   "dependencies": {
-    "canvas": "^2.10.1",
-    "chart.js": "^3.9.1",
-    "date-fns": "^2.29.3",
-    "node-fetch": "^3.2.10",
-    "telegraf": "^4.9.1"
+    "canvas": "^3.2.0",
+    "chart.js": "^4.5.0",
+    "date-fns": "^4.1.0",
+    "node-fetch": "^3.3.2",
+    "telegraf": "^4.16.3"
   },
   "devDependencies": {
     "http-server": "^14.1.1"

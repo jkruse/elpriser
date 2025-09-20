@@ -1,6 +1,16 @@
 let Chart = globalThis.Chart;
 if (!Chart) {
-    Chart = (await import("chart.js/auto/auto.mjs")).default;
+    const { BarController, BarElement, CategoryScale, Chart: ChartJS, LinearScale, SubTitle, Title } = await import('chart.js');
+    Chart = ChartJS;
+
+    Chart.register([
+        BarController,
+        BarElement,
+        CategoryScale,
+        LinearScale,
+        SubTitle,
+        Title
+    ]);
 }
 
 Chart.defaults.font.family = "'Liberation Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
@@ -69,13 +79,15 @@ export default function drawChart(canvas, date, area, data) {
                 }
             },
             parsing: {
-                xAxisKey: 'HourDK',
+                xAxisKey: 'TimeDK',
                 yAxisKey: 'Price'
             },
             scales: {
                 x: {
                     grid: {
-                        display: false
+                        display: true,
+                        drawOnChartArea: false,
+                        offset: false
                     }
                 },
                 y: {
@@ -104,7 +116,11 @@ export default function drawChart(canvas, date, area, data) {
                 },
                 subtitle: {
                     display: true,
-                    text: `min: ${min} / max: ${max} / gns: ${avg}`
+                    text: `min: ${min} / max: ${max} / gns: ${avg}`,
+                    padding: {
+                        top: 0,
+                        bottom: 10
+                    }
                 }
             }
         },
